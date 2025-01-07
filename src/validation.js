@@ -16,7 +16,7 @@ class Validator{
             country: this.validateCountry,
             zip: this.validateZip,
             password: this.validatePassword,
-            confirmPassword: this.validatePassword
+            confirmPassword: this.validateConfirmPassword
         };
 
         this.addEventListeners();
@@ -38,7 +38,7 @@ class Validator{
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!email) {
-            showError(email, 'Email is required');
+            showError(emailField, 'Email is required');
             return false;
         } else if (!emailPattern.test(email)) {
             showError(emailField, 'Please enter a valid email address.');
