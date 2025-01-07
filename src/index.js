@@ -10,12 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     addError(field);
   });
 
-  form.querySelector('#email').addEventListener('blur', () => validator.validateEmail());
-  form.querySelector('#country').addEventListener('blur', () => validator.validateCountry());
-  form.querySelector('#zip-code').addEventListener('blur', () => validator.validateZip());
-  form.querySelector('#password').addEventListener('blur', () => validator.validatePassword());
-  form.querySelector('#confirm-password').addEventListener('blur', () => validator.validateConfirmPassword());
-
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 

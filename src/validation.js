@@ -10,6 +10,26 @@ class Validator{
             password: form.querySelector('#password'),
             confirmPassword: form.querySelector('#confirm-password'),
         };
+
+        this.validattionRules = {
+            email: this.validateEmail,
+            country: this.validateCountry,
+            zip: this.validateZip,
+            password: this.validatePassword,
+            confirmPassword: this.validatePassword
+        };
+
+        this.addEventListeners();
+    }
+
+    addEventListeners() {
+        Object.keys(this.fields).forEach((fieldName) => {
+            const field = this.fields[fieldName];
+            const validate = this.validattionRules[fieldName].bind(this);
+
+            field.addEventListener('input', validate);
+            field.addEventListener('blur', validate);
+        });
     }
 
     validateEmail() {
