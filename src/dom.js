@@ -14,3 +14,5 @@ function hideError(field) {
     const errorField = field.nextElementSibling;
     errorField.style.display = 'none';
 }
+
+export { addError, showError, hideError }
