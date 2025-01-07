@@ -8,7 +8,7 @@ class Validator{
             country: form.querySelector('#country'),
             zip: form.querySelector('#zip-code'),
             password: form.querySelector('#password'),
-            confirmPassword: form.querySelector('#confirm-pasword'),
+            confirmPassword: form.querySelector('#confirm-password'),
         };
     }
 
@@ -20,7 +20,7 @@ class Validator{
         if (!email) {
             showError(email, 'Email is required');
             return false;
-        } else if (!emailPattern) {
+        } else if (!emailPattern.test(email)) {
             showError(emailField, 'Please enter a valid email address.');
             return false
         }
@@ -43,7 +43,7 @@ class Validator{
     }
 
     validateZip() {
-        const zipCodeField = this.fields.zipCode;
+        const zipCodeField = this.fields.zip;
         const zipCode = zipCodeField.value.trim();
 
         if(!zipCode) {
