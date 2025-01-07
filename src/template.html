@@ -3,9 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Webpack Template</title>
+    <title>Form validation</title>
   </head>
   <body>
-    <h1>Hello, Webpack!</h1>
+    <h1>Validation form</h1>
+    <form action="" novalidate>
+      <label for="email">Email:</label>
+      <input type="email" id="email" class="form-field" name="email" required>
+
+      <label for="country">Country:</label>
+      <input type="country" id="country" class="form-field" name="country" required>
+
+      <label for="zip-code">Zip Code:</label>
+      <input type="text" id="zip-code" class="form-field" name="zip-code" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" class="form-field" name="password" required>
+
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" class="form-field" name="confirm-password" required>
+
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>
